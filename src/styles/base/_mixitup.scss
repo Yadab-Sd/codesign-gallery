@@ -1,44 +1,36 @@
-/* 
-    Grid System portfolio section
-*/
-.grid-layout {
-    display: grid;
-    grid-gap: 10px;
-    height: 100%;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 100px 100px;
-    overflow: hidden;
-}
-.single-item {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  justify-content: center;
-}
-.item1 {
-    grid-column: span 2;
-    grid-row: span 3;
-}
-.item2, .item3{
-    grid-row: span 3;
-}
-.item6, .item7{
-    grid-row: span 12;   
-}
-.item8{
-    grid-row: span 12;
-    grid-column: span 2;
-}
-ul.work-filter {
-	text-align: center;
-}
-.work-filter li {
-	cursor: pointer;
-	display: inline-block;
-	margin-left: 20px;
-	text-transform: uppercase;
-	font-size: 13px;
-	line-height: 27px;
+// SCSS
+// Masonry layout flex
+.masonry-with-flex {
+	display: flex !important;
+	flex-direction: row !important;
+	max-height: 1000px !important;
+
+	div {
+		flex: 1 1 30%;
+
+		div {
+			background: #975a58 !important;
+			color: white !important;
+			text-align: center !important;
+			font-weight: 900 !important;
+            font-size: 2rem !important;
+            
+            img {
+                width: 100%;
+                padding: 10px;
+            }
+		}
+
+		@for $j from 1 through 3 {
+			&:nth-child(#{$j}) {
+				@for $i from 1 through 36 {
+					&:nth-child(#{$i}) {
+						$h: (random(400) + 100) + px;
+						height: $h !important;
+						line-height: $h !important;
+					}
+				}
+			}
+		}
+	}
 }

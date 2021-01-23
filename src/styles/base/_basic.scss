@@ -1321,8 +1321,8 @@ input[type=number] {
 
 .section-title {
 	font-size: 1.2rem;
-  font-weight: 700;
-  color: $primary-heading-color;
+	font-weight: 700;
+	color: $primary-heading-color;
 }
 
 .title-with-border {
@@ -1582,16 +1582,16 @@ body * ::-webkit-scrollbar-thumb {
 	}
 	.nav-link:hover {
 		color: $primary-heading-color;
-  }
-  
-  @include mobile-landscape-max {
-    .nav-link {
-      display: none;
-    }
-    .nav-link.dotted {
-      display: block;
-    }
-  }
+	}
+
+	@include mobile-landscape-max {
+		.nav-link {
+			display: none;
+		}
+		.nav-link.dotted {
+			display: block;
+		}
+	}
 }
 
 .dotted {
@@ -1812,8 +1812,9 @@ body * ::-webkit-scrollbar-thumb {
 			input {
 				font-size: 1.2rem;
 				border: none;
-        outline: none;
+				outline: none;
         margin: 0;
+        padding-left: 0;
 
 				&:focus {
 					border: none;
@@ -1821,7 +1822,8 @@ body * ::-webkit-scrollbar-thumb {
 				}
 			}
 			button {
-				font-size: 1.5rem;
+        font-size: 1rem;
+        color: $primary-text-color;
 			}
 		}
 
@@ -1838,40 +1840,58 @@ body * ::-webkit-scrollbar-thumb {
 }
 
 .home-contents {
-  margin: -100px auto 0;
-  width: 80%;
+	margin: -100px auto 0;
+	width: 80%;
 
-  @include mobile-landscape-max {
-    width: calc(100% - 40px);
-    margin-right: 20px;
-    margin-left: 20px;
-  }
+	@include mobile-landscape-max {
+		width: calc(100% - 40px);
+		margin-right: 20px;
+		margin-left: 20px;
+	}
 }
 
 .top-categories {
-  background-color: #fff;
-  min-height: 100px;
-  padding: 20px 40px;
+	background-color: #fff;
+	min-height: 100px;
+	padding: 20px 40px;
 }
 
 .gallery {
   background-color: #fff;
-    padding: 20px 40px;
+  
+  ul.work-filter {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left !important;
+    text-transform: capitalize !important;
 
+    li {
+      color: $primary-text-color !important;
+      cursor: pointer;
+      padding: 10px 5px;
+    }
+
+    li.active {
+      color: $primary-heading-color !important;
+    }
+  }
 }
 
 .owl-carousel .owl-item img {
-  border-radius: 3px;
+	border-radius: 3px;
 }
 
 .single-screenshot {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-  h4 {
-    position: absolute;
+	h4 {
+		position: absolute;
     z-index: 1000;
-  }
+    color: #fff;
+    text-shadow: 0 0 1px $primary-shadow-color;
+	}
 }

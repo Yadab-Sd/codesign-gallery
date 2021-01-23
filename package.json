@@ -57,6 +57,8 @@
 		"@fortawesome/fontawesome-svg-core": "^1.2.34",
 		"@fortawesome/free-solid-svg-icons": "^5.15.2",
 		"@fortawesome/react-fontawesome": "^0.1.14",
+		"lodash": "^4.17.20",
+		"mdbreact": "^5.0.1",
 		"mixitup": "^3.3.1",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
