@@ -1,0 +1,19 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import './base/variables';
+@import './base/mixin';
+@import './base/basic';
+@import './base/mixitup';
+
+.nav {
+  @apply flex;
+}
+
+.nav-link {
+  @apply px-2;
+}
+
+
+@import 'tailwindcss/utilities';
