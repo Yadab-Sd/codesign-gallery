@@ -1,4 +1,4 @@
-## Boilerplate for React projects.
+## Codesign Gallery
 
 Starter for React projects using Atomic design structure with support to both JSX and TSX, using SASS/SCSS, Eslint, Prettier, TailwindcssV2 and more, all of this using Webpack.<br/>
 `git clone` the project and get started with fully optimized environment for React development.<br/>
