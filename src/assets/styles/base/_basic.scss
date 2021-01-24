@@ -1895,3 +1895,7 @@ body * ::-webkit-scrollbar-thumb {
     text-shadow: 0 0 1px $primary-shadow-color;
 	}
 }
+
+.img-fluid {
+	width: 100% !important;
+}

@@ -48,7 +48,7 @@ const TopCategories: React.FC = () => {
 		}, 
 	]
 	return (
-		<div className='top-categories py-4 px-5'>
+		<div className='top-categories py-4 px-6'>
 			<div className='section-title mb-2'>Top categories</div>{' '}
 			<div className='slider-section'>
 				<section id='screenshot' className='section-padding'>

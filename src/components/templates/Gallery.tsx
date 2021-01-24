@@ -15,7 +15,7 @@ const Gallery: React.FC = () => {
 	}
 
 	return (
-		<div className='gallery py-4 px-5'>
+		<div className='gallery py-4 px-6'>
 			<div className='tabs-container'>
 				<section className='grid-layoutarea'>
 					<div className='container'>
@@ -24,7 +24,7 @@ const Gallery: React.FC = () => {
 								<Tabs>
 									<TabList className='work-filter text-left mb-2'>
 										{tabs.map((tab, index) => (
-											<Tab className='filter active' key={index}>
+											<Tab className={`${index === 0 ? 'active ' : ''}filter`} key={index}>
 												{tab}
 											</Tab>
 										))}
@@ -35,7 +35,7 @@ const Gallery: React.FC = () => {
 												<Masonry columnsCount={3} gutter={4}>
 													{images.map((img, i) => (
 														<div key={i}>
-															<img className='img-fluid' src={img} alt={tab} />
+															<img className='img-fluid' src={img} alt={tab} width='100%' />
 														</div>
 													))}
 												</Masonry>
