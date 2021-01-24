@@ -1788,18 +1788,31 @@ body * ::-webkit-scrollbar-thumb {
 	background: $primary-hover-color;
 }
 
+.header {
+	@include mobile-landscape-max {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
 .banner {
 	background: url(https://images.pexels.com/photos/6575477/pexels-photo-6575477.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 	background-size: cover;
 	min-height: 600px;
 	padding: 50px;
 
-	@include mobile-landscape-max {
-		max-width: 100%;
-	}
-
 	&-inner {
 		max-width: 80%;
+
+		@include mobile-landscape-max {
+			max-width: 100%;
+		}
+
+		.banner-title {
+			@include mobile-landscape-max {
+				font-size: 2rem;
+			}	
+		}
 
 		.search-bar {
 			margin: 20px auto;
@@ -1813,8 +1826,8 @@ body * ::-webkit-scrollbar-thumb {
 				font-size: 1.2rem;
 				border: none;
 				outline: none;
-        margin: 0;
-        padding-left: 0;
+				margin: 0;
+				padding-left: 0;
 
 				&:focus {
 					border: none;
@@ -1822,8 +1835,8 @@ body * ::-webkit-scrollbar-thumb {
 				}
 			}
 			button {
-        font-size: 1rem;
-        color: $primary-text-color;
+				font-size: 1rem;
+				color: $primary-text-color;
 			}
 		}
 
@@ -1857,25 +1870,25 @@ body * ::-webkit-scrollbar-thumb {
 }
 
 .gallery {
-  background-color: #fff;
-  
-  ul.work-filter {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    text-align: left !important;
-    text-transform: capitalize !important;
+	background-color: #fff;
 
-    li {
-      color: $primary-text-color !important;
-      cursor: pointer;
-      padding: 10px 5px;
-    }
+	ul.work-filter {
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		text-align: left !important;
+		text-transform: capitalize !important;
 
-    li.active {
-      color: $primary-heading-color !important;
-    }
-  }
+		li {
+			color: $primary-text-color !important;
+			cursor: pointer;
+			padding: 10px 5px;
+		}
+
+		li.active {
+			color: $primary-heading-color !important;
+		}
+	}
 }
 
 .owl-carousel .owl-item img {
@@ -1890,9 +1903,9 @@ body * ::-webkit-scrollbar-thumb {
 
 	h4 {
 		position: absolute;
-    z-index: 1000;
-    color: #fff;
-    text-shadow: 0 0 1px $primary-shadow-color;
+		z-index: 1000;
+		color: #fff;
+		text-shadow: 0 0 1px $primary-shadow-color;
 	}
 }
 

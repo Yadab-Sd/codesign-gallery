@@ -5,7 +5,7 @@ import { faDog, faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 
 const Header: React.FC = () => {
 	return (
-		<div className='flex flex-row justify-between items-center py-3'>
+		<div className='header flex flex-row justify-between items-center py-3'>
 			<div className='col-span-1'>
 				<img src={Logo} alt='Logo' />
 			</div>
