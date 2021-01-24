@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
+interface GalleryItem {
+	name: string;
+	images: string[];
+}
+
 const Gallery: React.FC = () => {
-	let images: string[] = []
+	const [data, setData] = useState<GalleryItem[]>([])
+	
 	const imgId = [1011, 883, 1074, 823, 64, 65, 839, 314, 256, 316, 92, 643]
 	const tabs = ['All', 'Photos', 'Videos']
 	const columnsCountBreakPoints = { 350: 1, 750: 2, 900: 3 }
 
-	for (let i = 0; i < imgId.length; i++) {
-		const ih = 200 + Math.floor(Math.random() * 10) * 15
-		images.push('https://unsplash.it/250/' + ih + '?image=' + imgId[i])
+	for (let j = 0; j < tabs.length; j++) {
+		let images: string[] = []
+		for (let i = 0; i < imgId.length; i++) {
+			const ih = 200 + Math.floor(Math.random() * 10) * 15
+			images.push('https://unsplash.it/250/' + ih + '?image=' + imgId[i])
+		}
+		data.push({
+			name: tabs[j],
+			images
+		})
 	}
 
 	return (
@@ -29,13 +42,13 @@ const Gallery: React.FC = () => {
 											</Tab>
 										))}
 									</TabList>
-									{tabs.map((tab, index) => (
+									{data.map((item, index) => (
 										<TabPanel key={index}>
 											<ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints}>
 												<Masonry columnsCount={3} gutter={4}>
-													{images.map((img, i) => (
+													{item.images.map((img, i) => (
 														<div key={i}>
-															<img className='img-fluid' src={img} alt={tab} width='100%' />
+															<img className='img-fluid' src={img} alt={item.name} width='100%' />
 														</div>
 													))}
 												</Masonry>
